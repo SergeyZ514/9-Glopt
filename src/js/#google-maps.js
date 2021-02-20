@@ -1,8 +1,7 @@
 // GOOGLE MAP
 
 let script = document.createElement('script');
-script.src =
-   'https://maps.googleapis.com/maps/api/js?key=AIzaSyCEWyAk9opnwPd5StFqVrrqaaUKpNnKP8s&callback=initMap';
+script.src = 'https://maps.googleapis.com/maps/api/js?key=KEY&callback=initMap';
 script.async = true;
 
 let map;
