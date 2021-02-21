@@ -17,8 +17,7 @@ const gulp = require('gulp'),
    imageminPngquant = require('imagemin-pngquant'),
    imageminZopfli = require('imagemin-zopfli'),
    imageminMozjpeg = require('imagemin-mozjpeg'),
-   favicons = require('gulp-favicons'),
-   wait = require('gulp-wait');
+   favicons = require('gulp-favicons');
 
 const path = {
    html: {
@@ -85,7 +84,6 @@ gulp.task('server', function () {
 gulp.task('styles', function () {
    return gulp
       .src(path.styles.src)
-      .pipe(wait(80))
       .pipe(sass().on('error', sass.logError))
       .pipe(postcss([autoprefixer()]))
       .pipe(webpCss({ webpClass: '', noWebpClass: '.no-webp' }))
@@ -211,13 +209,13 @@ gulp.task('html', function () {
 
 gulp.task('watch', function () {
    gulp
-      .watch(path.styles.watch, { usePolling: true })
+      .watch(path.styles.watch, { usePolling: true, delay: 80 })
       .on('change', gulp.parallel('styles'));
    gulp
       .watch(path.html.watch, { usePolling: true })
       .on('change', gulp.parallel('html'));
    gulp
-      .watch(path.scripts.watch, { usePolling: true })
+      .watch(path.scripts.watch, { usePolling: true, delay: 80 })
       .on('change', gulp.parallel('scripts'));
    gulp
       .watch(path.fonts.watch, { usePolling: true })
