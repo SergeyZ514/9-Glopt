@@ -1,0 +1,71 @@
+.header {
+   position: absolute;
+   width: 100%;
+   top: 0;
+   z-index: 10;
+   padding-top: 23px;
+
+   &__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   // .header__column
+
+   &__column {
+   }
+
+   // .header__logo
+
+   &__logo {
+   }
+
+   // .header__nav
+
+   &__nav {
+      li + li {
+         border-left: 1px dotted #858891;
+      }
+   }
+
+   // .header__list
+
+   &__list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   // .header__link
+
+   &__link {
+      font-size: 15px;
+      color: rgb(255, 255, 255);
+      line-height: 1.114;
+   }
+
+   // .header__contacts
+
+   &__contacts {
+   }
+
+   // .header__questions
+
+   &__ask {
+   }
+
+   // .header__phone
+
+   &__phone {
+   }
+
+   // .header__button
+
+   &__button {
+   }
+}
+.container {
+}
+.button {
+}

@@ -1,6 +1,14 @@
 .button {
    display: inline-block;
-   padding: 0px 0px;
+   padding: 0px 23px;
+   background-color: $main_color;
+   border-radius: 22px;
+   font-size: 13px;
+   color: rgb(255, 255, 255);
+   text-transform: uppercase;
+   line-height: 45px;
+   text-align: center;
+
    &:hover {
       cursor: pointer;
    }
