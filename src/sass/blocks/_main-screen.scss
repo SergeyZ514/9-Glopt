@@ -1,5 +1,241 @@
 .main-screen {
-   height: 100vh;
+   padding: 16px 0 80px 0;
    background: url('../img/main-screen/main_bg.jpg') center (center / cover)
       no-repeat;
+   text-align: center;
+   position: relative;
+
+   // .main-screen__slogan
+
+   &__slogan {
+      display: block;
+      font-size: 24px;
+      font-weight: 300;
+      color: rgb(255, 255, 255);
+      line-height: 1.2;
+      margin-bottom: 10px;
+   }
+
+   // .main-screen__title
+
+   &__title {
+      font-size: 72px;
+      font-family: 'Roboto Condensed';
+      color: $main_color;
+      font-weight: bold;
+      text-transform: uppercase;
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+   }
+
+   // .main-screen__subtitle
+
+   &__subtitle {
+      font-size: 42px;
+      font-family: 'Roboto Condensed';
+      color: rgb(255, 255, 255);
+      text-transform: uppercase;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+   }
+
+   // .main-screen__divider
+
+   &__divider {
+      height: 9px;
+      width: 9px;
+      background-color: #fff;
+      border-radius: 50%;
+      margin: 30px auto;
+      position: relative;
+      &:before {
+         content: '';
+         position: absolute;
+         height: 1px;
+         width: 389px;
+         background-color: #fff;
+         right: 20px;
+         top: 50%;
+      }
+      &::after {
+         content: '';
+         position: absolute;
+         height: 1px;
+         width: 389px;
+         background-color: #fff;
+         left: 20px;
+         top: 50%;
+      }
+   }
+
+   // .main-screen__row
+
+   &__row {
+      display: flex;
+      justify-content: space-between;
+   }
+
+   // .main-screen__item
+
+   &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 260px;
+      margin-bottom: 40px;
+   }
+
+   // .main-screen__item-image
+
+   &__item-image {
+      width: 67px;
+      height: 64px;
+   }
+
+   // .main-screen__item-text
+
+   &__item-text {
+      font-size: 16px;
+      color: rgb(255, 255, 255);
+      line-height: 1.375;
+      text-align: center;
+      font-weight: 300;
+   }
+
+   // .main-screen__button
+
+   &__top {
+      margin-bottom: 10px;
+   }
+   &__top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+   &__logo {
+      padding-top: 7px;
+      img {
+         width: 100%;
+         height: auto;
+      }
+   }
+
+   &__nav {
+   }
+
+   &__list {
+      li + li {
+         border-left: 1px dotted #858891;
+      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+
+   &__link {
+      font-size: 15px;
+      color: rgb(255, 255, 255);
+      line-height: 1.114;
+      transition: all 0.3s;
+      padding: 0 14px;
+      white-space: nowrap;
+      &:hover {
+         text-decoration: underline;
+         color: $main_color;
+      }
+   }
+
+   // .main-screen__contacts
+
+   &__contacts {
+   }
+
+   // .main-screen__ask
+
+   &__ask {
+      font-size: 14px;
+      color: rgb(255, 255, 255);
+      line-height: 1.714;
+      font-weight: 300;
+      display: block;
+      &:hover {
+         text-decoration: underline;
+      }
+   }
+
+   // .main-screen__phone
+
+   &__phone {
+      font-size: 19px;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      line-height: 1.263;
+      display: block;
+      white-space: nowrap;
+      &:hover {
+         color: $main_color;
+      }
+   }
+   .hamburger-icon {
+      position: absolute;
+      right: 40px;
+      top: 45px;
+      display: none;
+      z-index: 105;
+      .hamburger {
+         width: 30px;
+         height: 30px;
+         position: relative;
+
+         .bar {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background-color: $main_color;
+            border-radius: 4px;
+            transition: all 0.4s ease-in-out;
+            position: absolute;
+         }
+         .bar1 {
+            top: 0;
+            transform-origin: 5%;
+         }
+         .bar2,
+         .bar3 {
+            top: 50%;
+            transform: translateY(-50%);
+         }
+         .bar3 {
+         }
+         .bar4 {
+            bottom: 0;
+            transform-origin: 5%;
+         }
+         &.active {
+            .bar1 {
+               transform: rotate(45deg);
+               height: 3px;
+               width: 42px;
+            }
+            .bar2 {
+               transform: rotate(-45deg);
+               height: 3px;
+               background-color: transparent;
+            }
+            .bar3 {
+               transform: rotate(45deg);
+               height: 3px;
+               background-color: transparent;
+            }
+            .bar4 {
+               transform: rotate(-45deg);
+               height: 3px;
+               width: 42px;
+            }
+         }
+      }
+   }
+   .side-menu {
+      position: relative;
+   }
 }

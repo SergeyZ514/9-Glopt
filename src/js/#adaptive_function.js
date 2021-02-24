@@ -1,59 +1,41 @@
-// ADAPTIVE HEADER
+// ADAPTIVE FUNCTION
 
 window.addEventListener('resize', () => {
    adaptive_function();
 });
 
+let mainScreenList = document.querySelector('.main-screen__list');
+let sideMenu = document.querySelector('.side-menu');
+let mainScreenNav = document.querySelector('.main-screen__nav');
+let mainScreenAsk = document.querySelector('.main-screen__ask');
+let mainScreenPhone = document.querySelector('.main-screen__phone');
+let logo = document.querySelector('.main-screen__logo');
+let topColumns = document.querySelectorAll('.main-screen__top-column');
+let contactsColumn = document.querySelector('.main-screen__contacts');
+let sideMenuRow = document.querySelector('.side-menu__row');
+
 function adaptive_function() {
-   let width = document.documentElement.clientWidth;
-   let header = document.querySelector('.header');
-   let headerMenuBlock = header.querySelector('.header__menu-block');
-   let headerBottomLinks = header.querySelectorAll(
-      '.header__bottom-menu-list > li'
-   );
-   let headerMenuList = header.querySelector('.header__menu-list');
-   let header_top_link = header.querySelector('.header__top-link');
-   let headerListLeft = header.querySelector('.header__bottom-menu-list_l');
-   let headerListRight = header.querySelector('.header__bottom-menu-list_r');
-
-   if (width <= 768) {
-      if (!headerLang.classList.contains('adaptive')) {
-         headerLang.classList.add('adaptive');
-         headerMenuBlock.appendChild(headerLang);
-      }
+   let width = document.documentElement.clientWidth; // !important;
+   if (width <= 992) {
+      sideMenu.append(mainScreenList);
    } else {
-      if (headerLang.classList.contains('adaptive')) {
-         headerLang.classList.remove('adaptive');
-         header.querySelector('.header__top').prepend(headerLang);
-      }
+      mainScreenNav.append(mainScreenList);
    }
-
-   if (width <= 768) {
-      headerBottomLinks.forEach((element) => {
-         if (!element.classList.contains('adaptive')) {
-            element.classList.add('adaptive');
-            headerMenuList.append(element);
-         }
-      });
-   } else {
-      let headerMenuLinks = header.querySelectorAll('.header__menu-list > li');
-
-      for (let i = 0; i < headerMenuLinks.length; i++) {
-         if (headerMenuLinks[i].classList.contains('adaptive')) {
-            headerMenuLinks[i].classList.remove('adaptive');
-            if (i < headerMenuLinks.length / 2) {
-               headerListLeft.append(headerMenuLinks[i]);
-            } else {
-               headerListRight.append(headerMenuLinks[i]);
-            }
-         }
-      }
-   }
-
    if (width <= 576) {
-      headerMenuBlock.prepend(header_top_link);
+      sideMenuRow.append(mainScreenAsk);
+      sideMenuRow.append(mainScreenPhone);
+      sideMenu.prepend(logo);
+      logo.style.position = 'absolute';
+      logo.style.top = '3%';
+      logo.style.left = '50%';
+      logo.style.transform = 'translateX(-50%)';
    } else {
-      header.querySelector('.header__top').appendChild(header_top_link);
+      logo.style.position = 'static';
+      logo.style.top = '';
+      logo.style.left = '';
+      logo.style.transform = '';
+      topColumns[0].append(logo);
+      contactsColumn.append(mainScreenAsk, mainScreenPhone);
    }
 }
 

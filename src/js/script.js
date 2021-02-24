@@ -17,15 +17,84 @@ testWebP(function (support) {
    }
 });
 
-// .ibg
+// ADAPTIVE FUNCTION
 
-function ibg() {
-   let ibg = document.querySelectorAll('.ibg');
-   for (var i = 0; i < ibg.length; i++) {
-      if (ibg[i].querySelector('img')) {
-         ibg[i].style.backgroundImage =
-            'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
-      }
+window.addEventListener('resize', () => {
+   adaptive_function();
+});
+
+let mainScreenList = document.querySelector('.main-screen__list');
+let sideMenu = document.querySelector('.side-menu');
+let mainScreenNav = document.querySelector('.main-screen__nav');
+let mainScreenAsk = document.querySelector('.main-screen__ask');
+let mainScreenPhone = document.querySelector('.main-screen__phone');
+let logo = document.querySelector('.main-screen__logo');
+let topColumns = document.querySelectorAll('.main-screen__top-column');
+let contactsColumn = document.querySelector('.main-screen__contacts');
+let sideMenuRow = document.querySelector('.side-menu__row');
+
+function adaptive_function() {
+   let width = document.documentElement.clientWidth;
+   if (width <= 992) {
+      sideMenu.append(mainScreenList);
+   } else {
+      mainScreenNav.append(mainScreenList);
+   }
+   if (width <= 576) {
+      sideMenuRow.append(mainScreenAsk);
+      sideMenuRow.append(mainScreenPhone);
+      sideMenu.prepend(logo);
+      logo.style.position = 'absolute';
+      logo.style.top = '3%';
+      logo.style.left = '50%';
+      logo.style.transform = 'translateX(-50%)';
+   } else {
+      logo.style.position = 'static';
+      logo.style.top = '';
+      logo.style.left = '';
+      logo.style.transform = '';
+      topColumns[0].append(logo);
+      contactsColumn.append(mainScreenAsk, mainScreenPhone);
    }
 }
-ibg();
+
+adaptive_function();
+
+// HAMBURGER
+let hamburger = document.querySelector('.hamburger');
+
+hamburger.addEventListener('click', () => {
+   hamburger.classList.toggle('active');
+   sideMenu.classList.toggle('active');
+   if (hamburger.classList.contains('active')) {
+      document.body.style.overflow = 'hidden';
+   } else {
+      document.body.style.overflow = 'auto';
+   }
+});
+
+// MENU CLOSE
+let menuLink = document.querySelectorAll('.main-screen__link');
+menuLink.forEach((element) => {
+   element.addEventListener('click', () => {
+      if (sideMenu.classList.contains('active')) {
+         sideMenu.classList.remove('active');
+         hamburger.classList.remove('active');
+         document.body.style.overflow = 'auto';
+      }
+   });
+});
+
+// RIPPLE BUTTONS
+[].map.call(document.querySelectorAll('[anim="ripple"]'), (el) => {
+   el.addEventListener('click', (e) => {
+      e = e.touches ? e.touches[0] : e;
+      const r = el.getBoundingClientRect(),
+         d = Math.sqrt(Math.pow(r.width, 2) + Math.pow(r.height, 2)) * 2;
+      el.style.cssText = `--s: 0; --o: 1;`;
+      el.offsetTop;
+      el.style.cssText = `--t: 1; --o: 0; --d: ${d}; --x:${
+         e.clientX - r.left
+      }; --y:${e.clientY - r.top};`;
+   });
+});

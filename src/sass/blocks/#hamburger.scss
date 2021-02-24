@@ -1,6 +1,6 @@
 // HTML ###############################
 //
-// <div class="header__menu-icon">
+// <div class="hamburger-icon">
 // 	<div class="hamburger">
 // 		<span class="bar bar1"></span>
 // 		<span class="bar bar2"></span>
@@ -9,7 +9,7 @@
 // 	</div>
 // </div>
 
-&__menu-icon {
+.hamburger-icon {
    position: absolute;
    left: 40px;
    top: 24px;

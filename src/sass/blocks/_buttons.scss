@@ -1,6 +1,6 @@
 .button {
    display: inline-block;
-   padding: 0px 23px;
+   padding: 0px 21px;
    background-color: $main_color;
    border-radius: 22px;
    font-size: 13px;
@@ -8,8 +8,55 @@
    text-transform: uppercase;
    line-height: 45px;
    text-align: center;
-
+   white-space: nowrap;
+   &_big {
+      padding: 0 46px;
+      line-height: 57px;
+      font-size: 15px;
+      font-weight: bold;
+      border-radius: 26px;
+   }
    &:hover {
       cursor: pointer;
+   }
+}
+
+[anim='ripple'] {
+   //  Customize effect by defining the following
+   //  variables on the parent element
+   //  --ripple-background: white;
+   //  --ripple-opacity: 0.3;
+   //  --ripple-duration: 600ms;
+   //  --ripple-easing: linear;
+
+   position: relative;
+   overflow: hidden;
+
+   &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      background: var(--ripple-background, white);
+      border-radius: 50%;
+      pointer-events: none;
+
+      //  position and size
+      top: calc(var(--y) * 1px);
+      left: calc(var(--x) * 1px);
+      width: calc(var(--d) * 1px);
+      height: calc(var(--d) * 1px);
+
+      //  animated properties
+      opacity: calc(var(--o, 1) * var(--ripple-opacity, 0.3));
+      transition: calc(var(--t, 0) * var(--ripple-duration, 600ms))
+         var(--ripple-easing, linear);
+      transform: translate(-50%, -50%) scale(var(--s, 1));
+      transform-origin: center;
+   }
+   //  Just some styling
+   .button {
+      --ripple-background: white;
+      --ripple-opacity: 0.3;
+      --ripple-duration: 600ms;
    }
 }

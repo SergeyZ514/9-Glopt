@@ -17,7 +17,8 @@ const gulp = require('gulp'),
    imageminPngquant = require('imagemin-pngquant'),
    imageminZopfli = require('imagemin-zopfli'),
    imageminMozjpeg = require('imagemin-mozjpeg'),
-   favicons = require('gulp-favicons');
+   favicons = require('gulp-favicons'),
+   wait = require('gulp-wait');
 
 const path = {
    html: {
@@ -74,7 +75,7 @@ gulp.task('server', function () {
    browserSync({
       server: {
          baseDir: './dist/',
-         host: '192.168.1.64',
+         host: '192.168.1.99',
          port: 3000,
          notify: false,
       },
@@ -83,7 +84,8 @@ gulp.task('server', function () {
 
 gulp.task('styles', function () {
    return gulp
-      .src(path.styles.src, { delay: 80 })
+      .src(path.styles.src)
+      .pipe(wait(80))
       .pipe(sass().on('error', sass.logError))
       .pipe(postcss([autoprefixer()]))
       .pipe(webpCss({ webpClass: '', noWebpClass: '.no-webp' }))
