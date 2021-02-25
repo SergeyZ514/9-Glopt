@@ -1,0 +1,38 @@
+.staff-block {
+   padding: 58px 0 73px 0;
+   text-align: center;
+   &_1 {
+      background: url('../img/staff-1/staff1_bg.jpg') center (center / cover)
+         no-repeat;
+   }
+   &__logo {
+      width: 102px;
+      height: 102px;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 19px auto;
+      padding-bottom: 6px;
+   }
+
+   &__title {
+      font-size: 26px;
+      color: rgb(255, 255, 255);
+      font-weight: bold;
+      line-height: 0.885;
+      margin-bottom: 15px;
+   }
+
+   &__text {
+      font-size: 19px;
+      color: rgb(255, 255, 255);
+      line-height: 1.421;
+      text-align: center;
+      font-weight: 300;
+      max-width: 990px;
+      margin: 0 auto;
+   }
+}

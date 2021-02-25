@@ -151,6 +151,15 @@
          margin: 0 0 35px 0;
       }
    }
+   .staff-block {
+      padding: 40px 0 40px 0;
+      &__title {
+         font-size: 20px;
+      }
+      &__text {
+         font-size: 14px;
+      }
+   }
 }
 @media (max-width: 576px) {
    .container {
