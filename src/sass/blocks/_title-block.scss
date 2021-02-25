@@ -1,0 +1,25 @@
+.title-block {
+   max-width: 890px;
+   text-align: center;
+   &__title {
+      margin-bottom: 37px;
+      position: relative;
+      &::after {
+         content: '';
+         position: absolute;
+         height: 1px;
+         width: 148px;
+         background-color: $main_color;
+         left: 50%;
+         transform: translateX(-50%);
+         bottom: -24px;
+      }
+   }
+
+   &__subtitle {
+      font-size: 21px;
+      color: rgb(46, 46, 46);
+      line-height: 1.143;
+      font-weight: 300;
+   }
+}

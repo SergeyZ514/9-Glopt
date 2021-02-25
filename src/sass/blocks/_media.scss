@@ -32,6 +32,9 @@
          font-size: 15px;
       }
    }
+   .promo {
+      padding: 50px 5px 20px 5px;
+   }
 }
 @media (max-width: 992px) {
    .container {
@@ -90,6 +93,14 @@
          &.active {
             left: 0;
          }
+      }
+   }
+   .promo {
+      &__row {
+         flex-wrap: wrap;
+      }
+      &__item {
+         flex: 1 1 calc(50% - 30px);
       }
    }
 }
@@ -200,5 +211,23 @@
    }
    .title {
       font-size: 22px;
+   }
+   .title-block {
+      &__subtitle {
+         font-size: 16px;
+      }
+   }
+   .promo {
+      padding: 40px 0 20px 0;
+      &__row {
+         margin: 0;
+      }
+      &__item {
+         flex: 1 1 100%;
+         margin: 0 0 25px 0;
+      }
+      &__image {
+         margin-bottom: 18px;
+      }
    }
 }
