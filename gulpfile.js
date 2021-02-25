@@ -75,7 +75,7 @@ gulp.task('server', function () {
    browserSync({
       server: {
          baseDir: './dist/',
-         host: '192.168.1.79',
+         host: '192.168.1.80',
          port: 3000,
          notify: false,
       },

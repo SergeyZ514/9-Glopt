@@ -16,8 +16,15 @@
       font-weight: bold;
       border-radius: 26px;
    }
+   &_p43 {
+      padding: 0 41px;
+   }
+   &_p31 {
+      padding: 0 27px;
+   }
    &:hover {
       cursor: pointer;
+      background-color: #dc5238;
    }
 }
 
