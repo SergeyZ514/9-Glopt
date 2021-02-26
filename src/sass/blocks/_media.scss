@@ -119,6 +119,15 @@
          margin-bottom: 10px;
       }
    }
+   .schema {
+      padding-bottom: 20px;
+      &__row {
+      }
+      &__item {
+         margin-bottom: 20px;
+         flex: 0 0 calc(100% / 3 - 30px);
+      }
+   }
 }
 @media (max-width: 768px) {
    .container {
@@ -187,6 +196,11 @@
       &__form-title {
          margin: 20px 0 65px 0;
          font-size: 24px;
+      }
+   }
+   .schema {
+      &__item {
+         flex: 0 0 calc(50% - 30px);
       }
    }
 }
@@ -275,6 +289,15 @@
       &__item {
          margin: 0 0 20px 0;
          flex: 1 1 100%;
+      }
+   }
+   .schema {
+      &__row {
+         margin: 0;
+      }
+      &__item {
+         margin: 0 0 20px 0;
+         flex: 0 0 100%;
       }
    }
 }
