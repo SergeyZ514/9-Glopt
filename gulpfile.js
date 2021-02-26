@@ -76,7 +76,7 @@ gulp.task('server', function () {
       server: {
          baseDir: './dist/',
          host: '192.168.1.80',
-         port: 3000,
+         port: '3000',
          notify: false,
       },
    });

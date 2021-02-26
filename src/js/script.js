@@ -98,3 +98,23 @@ menuLink.forEach((element) => {
       }; --y:${e.clientY - r.top};`;
    });
 });
+
+// SLICK SLIDER
+
+$('.reviews__slider').slick({
+   centerMode: true,
+   arrows: true,
+   dots: false,
+   slidesToShow: 3,
+   slidesToScroll: 1,
+   infinite: true,
+   responsive: [
+      {
+         breakpoint: 993,
+         settings: {
+            centerMode: false,
+            slidesToShow: 1,
+         },
+      },
+   ],
+});
