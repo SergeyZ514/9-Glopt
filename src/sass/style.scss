@@ -32,6 +32,15 @@
    overflow: hidden;
 }
 
+.aside {
+   position: fixed;
+   right: 40px;
+   bottom: 40px;
+   z-index: 11;
+
+   transition: all 1s;
+}
+
 @import 'blocks/buttons';
 @import 'blocks/titles';
 @import 'blocks/title-block';

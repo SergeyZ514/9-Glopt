@@ -26,14 +26,23 @@
 	<link rel="apple-touch-icon" sizes="1024x1024" href="img/favicons/apple-touch-icon-1024x1024.png" />
 	<link rel="stylesheet" href="css/style.min.css" />
 	<!-- <script src="js/retina.min.js"></script> -->
-
-
 </head>
 
 <body>
 	<div class="wrapper">
 		<main class="page">
-			<section class="main-screen">
+			<div class="aside">
+				<a href="#main-screen">
+					<svg enable-background="new 0 0 256 256" height="50px" id="Layer_1" version="1.1" viewBox="0 0 256 256"
+						width="50px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink">
+						<path
+							d="M184.746,156.373c-1.639,0-3.275-0.625-4.525-1.875L128,102.278l-52.223,52.22c-2.497,2.5-6.55,2.5-9.05,0  c-2.5-2.498-2.5-6.551,0-9.05l56.749-56.747c1.2-1.2,2.828-1.875,4.525-1.875l0,0c1.697,0,3.325,0.675,4.525,1.875l56.745,56.747  c2.5,2.499,2.5,6.552,0,9.05C188.021,155.748,186.383,156.373,184.746,156.373z M256,128C256,57.42,198.58,0,128,0  C57.42,0,0,57.42,0,128c0,70.58,57.42,128,128,128C198.58,256,256,198.58,256,128z M243.2,128c0,63.521-51.679,115.2-115.2,115.2  c-63.522,0-115.2-51.679-115.2-115.2C12.8,64.478,64.478,12.8,128,12.8C191.521,12.8,243.2,64.478,243.2,128z"
+							fill="#ec644b" />
+					</svg>
+				</a>
+			</div>
+			<section class="main-screen" id="main-screen">
 				<div class="container">
 					<div class="main-screen__top">
 						<div class="main-screen__top-row">
@@ -44,12 +53,12 @@
 							<div class="main-screen__top-column">
 								<nav class="main-screen__nav">
 									<ul class="main-screen__list">
-										<li><a href="#" class="main-screen__link">Преимущества</a></li>
-										<li><a href="#" class="main-screen__link">Наша работа</a></li>
-										<li><a href="#" class="main-screen__link">Цены</a></li>
-										<li><a href="#" class="main-screen__link">Схема работы</a></li>
-										<li><a href="#" class="main-screen__link">Отзывы</a></li>
-										<li><a href="#" class="main-screen__link">Контакты</a></li>
+										<li><a href="#advantages" class="main-screen__link">Преимущества</a></li>
+										<li><a href="#promo" class="main-screen__link">Наша работа</a></li>
+										<li><a href="#options" class="main-screen__link">Цены</a></li>
+										<li><a href="#schema" class="main-screen__link">Схема работы</a></li>
+										<li><a href="#reviews" class="main-screen__link">Отзывы</a></li>
+										<li><a href="#map" class="main-screen__link">Контакты</a></li>
 									</ul>
 								</nav>
 							</div>
@@ -66,7 +75,7 @@
 					</div>
 					<span class="main-screen__slogan">Global Opt - логистика полного цикла из Китая в Россию</span>
 					<h1 class="main-screen__title">ДОСТАВКА ГРУЗОВ ИЗ КИТАЯ</h1>
-					<h2 class="main-screen__subtitle">В РОССИЮ И СНГ ВСЕМИ ВИДАМИ ТРАНСПОРТА</h2>
+					<div class="main-screen__subtitle">В РОССИЮ И СНГ ВСЕМИ ВИДАМИ ТРАНСПОРТА</div>
 					<div class="main-screen__divider"></div>
 					<div class="main-screen__row">
 						<div class="main-screen__item">
@@ -102,7 +111,7 @@
 					<div class="side-menu__row"></div>
 				</div>
 			</section>
-			<section class="advantages">
+			<section class="advantages" id="advantages">
 				<div class="container">
 					<h2 class="advantages__title title">Преимущества работы с GlobalOpt</h2>
 					<div class="advantages__row">
@@ -178,7 +187,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="promo">
+			<section class="promo" id="promo">
 				<div class="container">
 					<div class="promo__title-block title-block">
 						<h2 class="title-block__title title">Наша работа - больше чем просто доставка</h2>
@@ -224,7 +233,7 @@
 				</div>
 
 			</section>
-			<section class="options">
+			<section class="options" id="options">
 				<div class="container">
 					<div class="options__title-block title-block">
 						<h2 class="title-block__title title">Цены на любой вариант доставки</h2>
@@ -293,7 +302,7 @@
 				</div>
 
 			</section>
-			<section class="schema">
+			<section class="schema" id="schema">
 				<div class="container">
 					<h2 class="schema__title title">Схема работы с нами</h2>
 					<div class="schema__row">
@@ -338,8 +347,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="reviews">
-
+			<section class="reviews" id="reviews">
 				<div class="reviews__title-block title-block">
 					<h2 class="title-block__title title">отзывы наших клиентов</h2>
 					<p class="title-block__subtitle">Мы всегда стараемся помочь клиентам, что бы они обращались к нам
@@ -416,8 +424,8 @@
 					<form action="#" class="feedback__form" method="POST">
 						<fieldset class="feedback__fieldset">
 							<legend class="feedback__legend">
-								<div class="feedback__legend-title">Остались вопросы?</div>
-								<div class="feedback__legend-subtitle">Напишите нам!</div>
+								<h3 class="feedback__legend-title">Остались вопросы?</h3>
+								<h4 class="feedback__legend-subtitle">Напишите нам!</h4>
 							</legend>
 							<input type="text" id="name" class="feedback__input" name="name" placeholder="Ваше имя..."
 								required>
@@ -434,6 +442,10 @@
 					</form>
 				</div>
 			</div>
+			<div class="map lazyload" id="map">
+				<script async
+					src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aeb304f50e9dac54dc1a26e8079be5f49a5c9291167d4bbd5fa36fdb0cf4e9d1f&amp;width=100%25&amp;height=500&amp;lang=ru_RU&amp;scroll=false&onload=init"></script>
+			</div>
 		</main>
 
 		@@include('_footer.html')
@@ -443,7 +455,5 @@
 	@@include('_popup.html')
 	@@include('_js.html')
 </body>
-
-</html>
 
 </html>

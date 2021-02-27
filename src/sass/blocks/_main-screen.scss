@@ -158,6 +158,7 @@
       line-height: 1.714;
       font-weight: 300;
       display: block;
+      text-align: right;
       &:hover {
          text-decoration: underline;
       }
@@ -169,7 +170,7 @@
       font-size: 19px;
       color: rgb(255, 255, 255);
       font-weight: bold;
-      line-height: 1.263;
+      line-height: 24px;
       display: block;
       white-space: nowrap;
       &:hover {
