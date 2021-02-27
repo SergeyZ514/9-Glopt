@@ -250,6 +250,25 @@
          }
       }
    }
+   .feedback {
+      &__fieldset {
+         flex-direction: column;
+         align-items: center;
+         justify-content: flex-end;
+      }
+      &__input {
+         margin: 0 0 6px 0;
+         width: 270px;
+         & + input {
+            margin-left: 0;
+         }
+      }
+      &__textarea {
+         flex: 0 0 73px;
+         width: 100%;
+         min-width: 270px;
+      }
+   }
 }
 @media (max-width: 576px) {
    .container {
@@ -361,6 +380,19 @@
             transform: rotate(180deg);
             right: 20%;
          }
+      }
+   }
+   .feedback {
+      padding: 30px 0 50px 0;
+      &__legend-title {
+         font-size: 16px;
+      }
+      &__legend-subtitle {
+         font-size: 13px;
+      }
+      &__fieldset {
+         padding-left: 10px;
+         padding-right: 10px;
       }
    }
 }

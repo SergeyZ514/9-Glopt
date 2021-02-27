@@ -411,6 +411,29 @@
 					</div>
 				</div>
 			</section>
+			<div class="feedback">
+				<div class="container">
+					<form action="#" class="feedback__form" method="POST">
+						<fieldset class="feedback__fieldset">
+							<legend class="feedback__legend">
+								<div class="feedback__legend-title">Остались вопросы?</div>
+								<div class="feedback__legend-subtitle">Напишите нам!</div>
+							</legend>
+							<input type="text" id="name" class="feedback__input" name="name" placeholder="Ваше имя..."
+								required>
+							<input type="tel" id="phone" class="feedback__input" name="phone"
+								pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Ваш номер телефона..." required>
+							<input type="email" id="email" class="feedback__input" name="email" placeholder="Ваш e-mail..."
+								required>
+							<textarea name="textarea" id="textarea" class="feedback__textarea" placeholder="Сообщение..."
+								required></textarea>
+
+							<button class="feedback__button button button_p31" type="submit" anim="ripple">Отправить
+								заявку</button>
+						</fieldset>
+					</form>
+				</div>
+			</div>
 		</main>
 
 		@@include('_footer.html')
