@@ -1,4 +1,4 @@
-window.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   // WEBP
 
   function testWebP(callback) {
